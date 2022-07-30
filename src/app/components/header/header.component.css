@@ -4,17 +4,14 @@
 }
 .container {
   border: 1px solid black;
-  
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  margin: auto;
-  
-  display: grid;
+  display: flex;
+  align-items: flex-start;
   place-items: center;
   background-color: #128CFC;
 }
 
 .items {
+  flex: 3;
   width: 300px;
   background: #fffffe;
   box-shadow: 0 3px 6px rgba(black,0.16), 0 3px 6px rgba(black,0.23);
@@ -34,3 +31,7 @@
   margin: 0px 30px;
   border: 1px solid #0B5AA2;
 }
+
+.leftbox {
+  flex: 1;
+  }
