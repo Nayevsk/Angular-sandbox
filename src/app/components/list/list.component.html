@@ -10,14 +10,6 @@
   </li>
 </ul>
 
-<app-details></app-details>
+<app-details [choosenEmployee]="selectedEmployee"></app-details>
 
-<div *ngIf="selectedEmployee" class="items-body">
-  <h4>{{ selectedEmployee.name | uppercase }} Detais:</h4>
-  <div>
-    <ul>
-      <li>ID: {{ selectedEmployee.id }}</li>
-      <li>Job: {{ selectedEmployee.job }}</li>
-    </ul>
-  </div>
-</div>
+

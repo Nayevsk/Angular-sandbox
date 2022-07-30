@@ -1,6 +1,6 @@
-import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { EmployeeService } from 'src/app/services/employee.service';
 import {Employee} from '../../mock-employees/employees';
-import {EMPLOYEES} from '../../mock-employees/mock-employees';
 
 @Component({
   selector: 'app-list',
@@ -9,17 +9,21 @@ import {EMPLOYEES} from '../../mock-employees/mock-employees';
 })
 export class ListComponent implements OnInit {
 
-  employees = EMPLOYEES;
+  employees:Employee[] = [];
   selectedEmployee ?: Employee;
 
+  constructor(private employeeService:EmployeeService) { }
+
   onSelect(employee:Employee):void{
-    this.selectedEmployee = employee
-    console.log(this.selectedEmployee.name)
+    this.selectedEmployee = employee  
   }  
 
-  constructor() { }
+  getEmployee():void {
+    this.employeeService.getEmployee().subscribe(element => this.employees = element)
+  }
 
   ngOnInit(): void {
-  }
+    this.getEmployee()
+    }
 
 }

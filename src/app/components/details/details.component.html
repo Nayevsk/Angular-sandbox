@@ -1,1 +1,9 @@
-<div></div>
+<div *ngIf="choosenEmployee" class="items-body">
+  <h4>{{ choosenEmployee.name | uppercase }} Detais:</h4>
+  <div>
+    <ul>
+      <li>ID: {{ choosenEmployee.id }}</li>
+      <li>Job: {{ choosenEmployee.job }}</li>
+    </ul>
+  </div>
+</div>
