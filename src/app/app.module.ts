@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DetailsComponent } from './components/details/details.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     HeaderComponent,
-    DetailsComponent
+    DetailsComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

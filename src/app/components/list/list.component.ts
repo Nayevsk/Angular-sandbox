@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 import {Employee} from '../../mock-employees/employees';
+import { HistoryService } from 'src/app/services/history.service';
 
 @Component({
   selector: 'app-list',
@@ -12,10 +13,11 @@ export class ListComponent implements OnInit {
   employees:Employee[] = [];
   selectedEmployee ?: Employee;
 
-  constructor(private employeeService:EmployeeService) { }
+  constructor(private employeeService:EmployeeService, private historyService:HistoryService) { }
 
   onSelect(employee:Employee):void{
-    this.selectedEmployee = employee  
+    this.selectedEmployee = employee
+    this.historyService.add('Employee Selected: has id=${employee.id}')  
   }  
 
   getEmployee():void {
