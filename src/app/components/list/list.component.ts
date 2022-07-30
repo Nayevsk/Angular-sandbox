@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import {Employee} from '../../mock-employees/employees';
 import {EMPLOYEES} from '../../mock-employees/mock-employees';
 
@@ -9,8 +9,13 @@ import {EMPLOYEES} from '../../mock-employees/mock-employees';
 })
 export class ListComponent implements OnInit {
 
-  title:string = 'Beggining'
-  employees = EMPLOYEES;  
+  employees = EMPLOYEES;
+  selectedEmployee ?: Employee;
+
+  onSelect(employee:Employee):void{
+    this.selectedEmployee = employee
+    console.log(this.selectedEmployee.name)
+  }  
 
   constructor() { }
 

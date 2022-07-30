@@ -41,6 +41,7 @@
   margin: 10px;
   display: grid;
   grid-gap: 10px;
+  list-style-type: none;
 }
 
 .items-body-content {
@@ -75,5 +76,15 @@
   }
   50% {
     transform: translate(3px);
-  }
+  }  
 }
+
+.animated-fill-button {
+  padding: 10px;
+  background: rgb(159, 244, 156);
+  color: #000;
+  border: 1px solid rgb(3, 247, 64);
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+

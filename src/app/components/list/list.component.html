@@ -1,6 +1,23 @@
-<div class="items-body">
-  <div class="items-body-content" *ngFor="let employee of employees">
-    <span>{{ employee.job }}</span>
-    <i class="fa fa-angle-right">Awesome!</i>
+<ul class="items-body">
+  <li *ngFor="let employee of employees">
+    <button
+      (click)="onSelect(employee)"
+      class="items-body-content"
+      [class.animated-fill-button]="employee === selectedEmployee"
+    >
+      {{ employee.name }} <i class="fa fa-angle-right">Awesome!</i>
+    </button>
+  </li>
+</ul>
+
+<app-details></app-details>
+
+<div *ngIf="selectedEmployee" class="items-body">
+  <h4>{{ selectedEmployee.name | uppercase }} Detais:</h4>
+  <div>
+    <ul>
+      <li>ID: {{ selectedEmployee.id }}</li>
+      <li>Job: {{ selectedEmployee.job }}</li>
+    </ul>
   </div>
 </div>
