@@ -1,5 +1,5 @@
-<div *ngIf="historyService.history.length" class="container">
-  <h2 class="header">History</h2>
-  <div *ngFor="let message of historyService.history" class="content">{{ message }}</div>
+<div *ngIf="historyService.history.length">
+  <h2>History</h2>
+  <h5 *ngFor="let message of historyService.history">{{ message }}</h5>
   <button type="button" (click)="historyService.clear()">Clear</button>
 </div>

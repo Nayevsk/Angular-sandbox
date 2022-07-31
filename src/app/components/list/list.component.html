@@ -1,11 +1,11 @@
 <ul class="items-body">
-  <li *ngFor="let employee of employees">
+  <li *ngFor="let employee of employees" >
     <button
       (click)="onSelect(employee)"
       class="items-body-content"
       [class.animated-fill-button]="employee === selectedEmployee"
-    >
-      {{ employee.name }} <i class="fa fa-angle-right">Awesome!</i>
+      >
+      {{ employee.name }} <i class="fa fa-bars" > hihihi</i>
     </button>
   </li>
 </ul>

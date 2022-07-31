@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
 
   onSelect(employee:Employee):void{
     this.selectedEmployee = employee
-    this.historyService.add('Employee Selected: has id=${employee.id}')  
+    this.historyService.add(`Employee : Selected employee has id = ${employee.id}`)  
   }  
 
   getEmployee():void {
